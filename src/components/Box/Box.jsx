@@ -11,7 +11,7 @@ class Box extends React.Component {
 
                 {/* conditions */}
                 {this.props.icon !== "local_drink" && this.props.icon !== "directions_walk" &&
-                <input className="slider" type="range" min={this.props.min} max={this.props.max} value={this.props.value} onChange={this.props.onChange}/>}
+                <input type="range" min={this.props.min} max={this.props.max} value={this.props.value} onChange={this.props.onChange}/>}
                 {this.props.icon === "directions_walk" &&
                 <>
                     <button className="btn btn-primary" onClick={this.props.retire}>-</button>
