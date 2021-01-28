@@ -8,7 +8,16 @@ class Box extends React.Component {
                     {this.props.icon}
                 </span>
                 <p>{this.props.value} {this.props.unit}</p>
-                {this.props.icon !== "local_drink" && <input type="range" min={this.props.min} max={this.props.max} value={this.props.value} onChange={this.props.onChange}></input>}
+
+                {/* conditions */}
+                {this.props.icon !== "local_drink" && this.props.icon !== "directions_walk" &&
+                <input className="slider" type="range" min={this.props.min} max={this.props.max} value={this.props.value} onChange={this.props.onChange}/>}
+                {this.props.icon === "directions_walk" &&
+                <>
+                    <button className="btn btn-primary" onClick={this.props.retire}>-</button>
+                    <button className="btn btn-secondary" onClick={this.props.ajoute}>+</button>
+                </>}
+                {/* conditions */}
             </div>
         )
     }
